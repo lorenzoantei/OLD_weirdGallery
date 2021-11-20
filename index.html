@@ -1,17 +1,29 @@
 <html>
+
+<!-- CHECK
+
+  https://www.npmjs.com/package/aframe-orbit-controls
+
+-->
   <head>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script> <!-- locale o server?-->
 
   </head>
 
   <body>
+
+    
       
     <a-scene>
         <!-- CAMERA -->
-        <a-entity look-controls camera position="0 2 0" rotation="0 280 0"></a-entity> <!-- tolto  - aggiungere parallax poi-->
+        <a-entity 
+          look-controls 
+          camera position="0 2 0" 
+          rotation="0 280 0"
+        ></a-entity> <!-- tolto  - aggiungere parallax poi-->
         
         <a-sky 
-            color="#ECECEC"
+            color="purple"
         ></a-sky>
 
         <a-plane 
@@ -19,18 +31,26 @@
             rotation="-90 0 0" 
             width="500" 
             height="1004" 
-            color="#7BC8A4"
-        ></a-plane>
+            color="gray"
+        ></a-plane> <!-- add texture -->
 
         <a-cylinder 
-            position="10 5 -30" 
+            position="20 12 -40" 
             color="red" 
             rotation="0 0 0" 
             animation="property: rotation; to: 360 360 360; loop: true; dur: 2000"
             scale="2 20 2"
         ></a-cylinder>
+
+        <a-entity>
+          <div>
+            <img src="/public/catto.png" alt="">
+          </div>
+        </a-entity>
         
-    
     </a-scene>
+
+    
+
   </body>
 </html>
