@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "aframe-watcher": "^1.4.0"
+    "aframe-watcher": "^1.4.0",
+    "tailwindcss": "^2.2.19"
   }
 }
