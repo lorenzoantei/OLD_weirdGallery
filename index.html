@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+
+  </head>
+
+  <body>
+    <a-scene>
+        <!-- CAMERA -->
+        <a-entity look-controls camera position="0 2 0" rotation="0 280 0"></a-entity> <!-- tolto  - aggiungere parallax poi-->
+        
+        <a-sky 
+            color="#ECECEC"
+        ></a-sky>
+
+        <a-plane 
+            position="0 0 -4" 
+            rotation="-90 0 0" 
+            width="500" 
+            height="1004" 
+            color="#7BC8A4"
+        ></a-plane>
+
+        <a-cylinder 
+            position="10 5 -30" 
+            color="red" 
+            rotation="0 0 0" 
+            animation="property: rotation; to: 360 360 360; loop: true; dur: 2000"
+            scale="2 20 2"
+        ></a-cylinder>
+        
+    
+    </a-scene>
+  </body>
+</html>
