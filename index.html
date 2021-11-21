@@ -16,11 +16,16 @@
       
     <a-scene>
         <!-- CAMERA -->
-        <a-entity 
-          look-controls 
-          camera position="0 2 0" 
-          rotation="0 280 0"
-        ></a-entity> <!-- tolto  - aggiungere parallax poi-->
+        
+        <a-camera>
+          <a-entity 
+            position="0 0 -1"
+            geometry="primitive: plane"
+            material.opacity="1"
+          > <!-- perchè colore random al refresh? opacità?-->
+
+          </a-entity>
+        </a-camera>
         
         <a-sky 
             color="purple"
@@ -42,13 +47,22 @@
             scale="2 20 2"
         ></a-cylinder>
 
-        <a-entity>
-          <div>
-            <img src="/public/catto.png" alt="">
-          </div>
-        </a-entity>
+        
+        <a-sphere 
+            id="overlay" 
+            position="5 5 -10"
+            scale="0.5 0.5 0.5"
+            material="opacity:1; color: white; side: front"
+        ></a-sphere>
+      
+
+
         
     </a-scene>
+
+    <div>
+      <img src="public/catto.png" alt="">
+    </div>
 
     
 
