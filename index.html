@@ -20,18 +20,20 @@
       fog="type: linear; 
       color: #707; 
       near: 1; 
-      far: 100">
-         <!--fix FOG-->
-        
+      far: 100"><!--fix FOG-->
+
         <a-camera>
           <a-entity 
-            position="0 0 -2"
+            position="0 0 -1"
             geometry="primitive: plane"
-            material="color: #333; opacity:0.5"> <!--fix trasparenza non si vede oggetto dietro--> <!--fix round corner -->
+            material="color: #333; opacity:0.2"
+          > <!--fix trasparenza non si vede oggetto dietro--> <!--fix round corner -->
+            
 
             <a-entity 
               position="0 0 -0,5" 
-              text="color: white; align: center; value: OPERA; width: 2; ">
+              text="color: white; align: center; width: 2; value: OPERA;">
+              <a-link href="x.html"></a-link>
             </a-entity>
 
           </a-entity>
@@ -76,12 +78,12 @@
 
         <a-entity geometry="primitive:dodecahedron; radius:4"
           position="18 14 -40"
+          scale="3.5 3.5 3.5"
           color="magenta"
-          rotation="0 0 0"
+
           animation="property: rotation; to: 360 360 360; dir: reverse; loop: true; dur: 100000"
-          material="opacity:0.5; metalness:0.5"
-          scale="3.5 3.5 3.5">
-        </a-entity>
+          material="opacity:1; metalness:0.5; color:green"
+          ></a-entity>
 
         <!--a-sphere 
             id="overlay" 
