@@ -11,7 +11,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>weirdGallery</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script> <!-- locale o server?-->
-<link rel="icon" href="/public/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/public/favicon.ico" type="image/x-icon">
+
+    <script> //script anchor link - thx https://stackoverflow.com/questions/49018866/need-help-creating-links-to-other-web-pages-in-aframe
+      AFRAME.registerComponent('navigate-on-click', {
+        schema: {
+          url: {default: ''}
+        },
+
+        init: function () {
+          var data = this.data;
+          var el = this.el;
+
+          el.addEventListener('click', function () {
+            window.location.href = data.url;
+          });
+        }
+      });        
+    </script>
+
   </head>
 
   <body>
@@ -22,18 +40,20 @@
       near: 1; 
       far: 100"><!--fix FOG-->
 
-        <a-camera>
+        <a-camera
+        cursor="rayOrigin: mouse">
           <a-entity 
             position="0 0 -1"
             geometry="primitive: plane"
             material="color: #333; opacity:0.2"
+             navigate-on-click="url: https://www.youtube.com/watch?v=VNfmnOn5O3A"
+            1
           > <!--fix trasparenza non si vede oggetto dietro--> <!--fix round corner -->
             
 
             <a-entity 
               position="0 0 -0,5" 
-              text="color: white; align: center; width: 2; value: OPERA;">
-              <a-link href="x.html"></a-link>
+              text="color: white; align: center; width: 2; value: click me;">
             </a-entity>
 
           </a-entity>
@@ -80,6 +100,7 @@
           position="18 14 -40"
           scale="3.5 3.5 3.5"
           color="magenta"
+          
 
           animation="property: rotation; to: 360 360 360; dir: reverse; loop: true; dur: 100000"
           material="opacity:1; metalness:0.5; color:green"
