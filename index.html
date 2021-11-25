@@ -20,10 +20,13 @@
         
         <a-camera>
           <a-entity 
-            position="0 0 -1"
+            position="0 0 -2"
             geometry="primitive: plane"
             material.opacity="1"
           > <!-- perchè colore random al refresh? opacità?-->
+          <a-entity position="0 0 -0,5" geometry="primitive: plane; width: auto; height: auto" material="color: #eee"
+                  text="color: blue; align: center; value: [CENTER ALIGNED]; width: 2; ">
+        </a-entity>
 
           </a-entity>
         </a-camera>
