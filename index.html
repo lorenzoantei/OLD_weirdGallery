@@ -13,10 +13,8 @@
 
   <body>
 
-    
-      
-    <a-scene>
-        <!-- CAMERA -->
+    <a-scene fog="type: linear; color: #707; near: 2; far: 100">
+         <!--Fog sì? Fog no?-->
         
         <a-camera>
           <a-entity 
@@ -43,32 +41,49 @@
             color="gray"
         ></a-plane> <!-- add texture -->
 
-        <a-cylinder 
-            position="20 12 -40" 
+        <!--
+        <a-assets>
+          <a-asset-item id="column-obj" src="/weirdGallery-master/colonnaobj/colonna_base.obj"></a-asset-item>
+          <a-asset-item id="column-mtl" src="/weirdGallery-master/colonnaobj/colonna_base.mtl"></a-asset-item>
+        </a-assets>
+         -->
+      
+        <a-entity 
+        obj-model="obj: #column-obj;"
+        position="19 14 -40"
+        rotation="0 0 0"
+        animation="property: rotation; to: 360 360 360; loop: true; dur: 60000"
+        scale="0.49 0.55 0.4"
+        ></a-entity>
+        <!--si può fare anche con texture volendo-->
+
+        <!--a-cylinder 
+            position="20 14 -40" 
             color="red" 
             rotation="0 0 0" 
-            animation="property: rotation; to: 360 360 360; loop: true; dur: 2000"
+            animation="property: rotation; to: 360 360 360; loop: true; dur: 35000"
             scale="2 20 2"
-        ></a-cylinder>
+        ></a-cylinder-->
+        <!--ho sostituito con colonna della domus, avevo il modello-->
 
-        
-        <a-sphere 
+        <a-entity geometry="primitive:dodecahedron; radius:4"
+          position="18 14 -40"
+          color="magenta"
+          rotation="0 0 0"
+          animation="property: rotation; to: 360 360 360; dir: reverse; loop: true; dur: 100000"
+          material="opacity:0.5; metalness:0.5"
+          scale="3.5 3.5 3.5">
+        </a-entity>
+
+        <!--a-sphere 
             id="overlay" 
             position="5 5 -10"
             scale="0.5 0.5 0.5"
             material="opacity:1; color: white; side: front"
-        ></a-sphere>
+        ></a-sphere-->
+        <!--what for? placeholder per venere?-->
       
-
-
-        
     </a-scene>
-
-    <div>
-      <img src="public/catto.png" alt="">
-    </div>
-
-    
 
   </body>
 </html>
