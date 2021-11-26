@@ -1,0 +1,1 @@
+Modellino della colonna per la Domus fatto da me, può essere texturizzato :) lo avevo ancora nel computer da Giugno scorso
