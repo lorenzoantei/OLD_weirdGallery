@@ -4,6 +4,7 @@
   * https://www.npmjs.com/package/aframe-orbit-controls
   * blending e proprietà materiali https://aframe.io/docs/1.2.0/components/material.html#properties_blending
   * aggiungere onload
+  * aframe ar? <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
 -->
 
   <head>
@@ -50,11 +51,11 @@
               navigate-on-click="url: https://www.youtube.com/watch?v=VNfmnOn5O3A"
           > <!--fix round corner -->
             
-
             <a-entity 
               position="0 0 -0,5" 
-              text="color: white; align: center; width: 2; value: click me;">
+              text="color: white; align: center; width: 2; value: click per ultimo progetto;">
             </a-entity>
+            
 
           </a-entity>
         </a-camera>
@@ -75,6 +76,17 @@
           <a-asset-item id="column-obj" src="/public/colonnaobj/Colonna_base.obj"></a-asset-item>
           <!--<a-asset-item id="column-mtl" src="/public/colonnaobj/Colonna_base.mtl"></a-asset-item>-->
         </a-assets>
+       
+        
+        <a-entity geometry="primitive:dodecahedron; radius:4"
+          position="18 14 -40"
+          scale="3.5 3.5 3.5"
+          color="magenta"
+          
+          navigate-on-click="url: ./old.html"
+          animation="property: rotation; to: 360 360 360; dir: reverse; loop: true; dur: 100000"
+          material="opacity:1; metalness:1; color:white; blending:additive"
+        >
         <a-entity 
         obj-model="obj: #column-obj;"
         position="19 14 -40"
@@ -82,17 +94,6 @@
         animation="property: rotation; to: 360 360 360; loop: true; dur: 60000"
         scale="0.49 0.55 0.4"
         ></a-entity> <!--si può fare anche con texture volendo - TODO trovare soluzione più leggera-->
-        
-        <a-entity geometry="primitive:dodecahedron; radius:4"
-          position="18 14 -40"
-          scale="3.5 3.5 3.5"
-          color="magenta"
-          
-          
-          animation="property: rotation; to: 360 360 360; dir: reverse; loop: true; dur: 100000"
-          material="opacity:1; metalness:1; color:white; blending:additive"
-        >
-        
         </a-entity>
       
     </a-scene>
