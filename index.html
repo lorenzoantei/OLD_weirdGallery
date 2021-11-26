@@ -56,9 +56,15 @@
 
             <a-entity 
               position="0 0 -0,5" 
+<<<<<<< Updated upstream
               text="color: white; align: center; width: 2; value: click me;">
             </a-entity>
 
+=======
+              text="color: #5dee56; align: center; width: 2; value: click per ultimo progetto;">
+            </a-entity>
+            
+>>>>>>> Stashed changes
           </a-entity>
         </a-camera>
         
@@ -66,13 +72,19 @@
             color="purple"
         ></a-sky>
 
+        <a-assets>
+          <img id="nyan" src="/public/grayscale-nyan.png">
+        </a-assets>
+
         <a-plane 
             position="0 0 -4" 
             rotation="-90 0 0" 
             width="500" 
             height="1004" 
             color="gray"
+            material="src:#nyan; repeat: 250, 450; blending: normal"
         ></a-plane> <!-- add texture -->
+        <!--texture NYAN? IF YES, maybe più chiaro? also fix opacity problem-->
 
         <a-assets>
           <a-asset-item id="column-obj" src="/public/colonnaobj/Colonna_base.obj"></a-asset-item>
