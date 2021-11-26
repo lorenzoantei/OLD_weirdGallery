@@ -25,7 +25,9 @@
           var el = this.el;
 
           el.addEventListener('click', function () {
-            window.location.href = data.url;
+            window.open (data.url);
+            //window.location.href = data.url;
+            //così apre una nuova finestra invece di sovrascrivere quella di weirdGallery
           });
         }
       });        
@@ -49,6 +51,7 @@
             material="color: #333; opacity:0.2; blending:normal"
               navigate-on-click="url: https://www.youtube.com/watch?v=VNfmnOn5O3A"
           > <!--fix round corner -->
+            <!--https://github.com/etiennepinchon/aframe-rounded, if it works, or texture i guess?-->
             
 
             <a-entity 
@@ -88,8 +91,7 @@
         <a-entity geometry="primitive:dodecahedron; radius:4"
           position="18 14 -40"
           scale="3.5 3.5 3.5"
-          color="magenta"
-          
+          color="magenta"          
 
           animation="property: rotation; to: 360 360 360; dir: reverse; loop: true; dur: 100000"
           material="opacity:1; metalness:0.5; color:green; blending:additive"
