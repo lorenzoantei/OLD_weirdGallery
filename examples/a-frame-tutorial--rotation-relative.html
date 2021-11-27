@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-Frame Tutorial</title>
+    <!-- https://www.youtube.com/watch?v=j-dlO71Gsqk&list=PL8MkBHej75fJD-HveDzm4xKrciC5VfYuV&index=3 -->
+
+    <link rel="icon" href="/public/favicon.ico" type="image/x-icon">
+
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script> <!-- locale o server?-->
+
+    
+</head>
+<body>
+    <a-scene>
+        <a-cylinder
+                color="red"
+                position="-4 0 -10"
+                height="3"
+                animation="property: rotation; to: 360 0 0; loop: true; dur: 3000">
+                
+            </a-cylinder>
+            <a-entity
+                position="0 0 -2"
+                width="20"
+                material="color: blue"
+                
+                text="text: Hello World;">
+                </a-entity>
+            <a-cylinder
+                color="blue"
+                position="0 0 -10"
+                height="3"
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 3000">>
+            </a-cylinder>
+            <a-cylinder
+                color="green"
+                position="4 0 -10"
+                height="3"
+                animation="property: rotation; to: 0 0 360; loop: true; dur: 3000">>
+            </a-cylinder>
+    </a-scene>
+</body>
+</html>
