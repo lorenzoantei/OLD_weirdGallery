@@ -4,7 +4,6 @@
   * https://www.npmjs.com/package/aframe-orbit-controls
   * blending e proprietà materiali https://aframe.io/docs/1.2.0/components/material.html#properties_blending
   * aggiungere onload
-  * aframe ar? <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
 -->
 
   <head>
@@ -12,10 +11,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>weirdGallery</title>
-    <link rel="icon" href="/public/favicon.ico" type="image/x-icon">
-
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script> <!-- locale o server?-->
-    
+    <link rel="icon" href="/public/favicon.ico" type="image/x-icon">
 
     <script> //script anchor link - thx https://stackoverflow.com/questions/49018866/need-help-creating-links-to-other-web-pages-in-aframe
       AFRAME.registerComponent('navigate-on-click', {
@@ -41,62 +38,33 @@
   <body>
 
     <a-scene 
-    fog="type: linear; 
-    color: #707; 
-    near: 1; 
-    far: 100"><!--fix FOG-->
+      fog="type: linear; 
+      color: #707; 
+      near: 1; 
+      far: 100"><!--fix FOG-->
 
-      <a-assets> 
-        <a-asset-item id="column-obj" src="/public/colonnaobj/Colonna_base.obj"></a-asset-item>
-        <!--<a-asset-item id="column-mtl" src="/public/colonnaobj/Colonna_base.mtl"></a-asset-item>-->
-      </a-assets>
+        <a-camera
+        cursor="rayOrigin: mouse">
+          <a-entity 
+            position="0 0 -1"
+            geometry="primitive: plane"
+            material="color: #333; opacity:0.2; blending:normal"
+              navigate-on-click="url: https://www.youtube.com/watch?v=VNfmnOn5O3A"
+          > <!--fix round corner -->
+            <!--https://github.com/etiennepinchon/aframe-rounded, if it works, or texture i guess?-->
+            
 
-      <a-camera
-      cursor="rayOrigin: mouse">
-
-        <a-plane 
-          position="0 0 -1"
-          material="opacity:0.3"
-          navigate-on-click="url: https://www.youtube.com/watch?v=VNfmnOn5O3A"
-        > <!--fix round corner -->
-
-        <a-image
-          id="actualPreview" 
-          src="/public/catto.png"
-          scale="0.4 0.4"
-          position="0 .15 0.2"
-          ></a-image>
-
-          <a-entity
-            position="0 -0.5 0"
-              >
             <a-entity 
-            position="0 0.2 -1" 
-            text="
-              color: white; 
-              align: center; 
-              width: 2; 
-              value:Artista;">
+              position="0 0 -0,5" 
+              text="color: #5dee56; align: center; width: 2; value: click per ultimo progetto;">
+            </a-entity>
+            
           </a-entity>
-          <a-entity 
-            position="0 0 -1" 
-            text="
-              color: white; 
-              align: center; 
-              width: 2; 
-              value: titolo opera;">
-          </a-entity>
-          <a-entity 
-            position="0 -0.2 -1" 
-            text="
-              color: white; 
-              align: center; 
-              width: 2; 
-              value: click per ultimo progetto;">
-          </a-entity>
-          </a-entity>
-        </a-plane>
-      </a-camera>
+        </a-camera>
+        
+        <a-sky 
+            color="purple"
+        ></a-sky>
 
         <a-assets>
           <img id="nyan" src="/public/grayscale-nyan.png">
@@ -116,26 +84,7 @@
           <a-asset-item id="column-obj" src="/public/colonnaobj/Colonna_base.obj"></a-asset-item>
           <!--<a-asset-item id="column-mtl" src="/public/colonnaobj/Colonna_base.mtl"></a-asset-item>-->
         </a-assets>
-      <a-sky 
-        color="purple"
-      ></a-sky>
       
-      <a-plane 
-          rotation="-90 0 0" 
-          width="10" 
-          height="100" 
-          color="white"
-          material="opacity:1; metalness:0.5;"
-      ></a-plane> <!-- add texture -->
-
-      <a-entity geometry="primitive:dodecahedron; radius:3.8"
-        position="5 4 -10"
-        color="magenta"
-
-        navigate-on-click="url: ./old.html"
-        animation="property: rotation; to: 360 360 360; dir: reverse; loop: true; dur: 120000"
-        material="opacity:1; metalness:0.8; color:white; blending:additive"
-      >
         <a-entity 
         obj-model="obj: #column-obj;"
         position="19 14 -40"
@@ -150,30 +99,11 @@
           scale="3.5 3.5 3.5"
           color="magenta" 
           navigate-on-click="url: ./old.html"     
-        animation="property: rotation; to: 360 360 360; loop: true; dur: 90000"
-        scale="0.15 0.15 0.15"
-        ></a-entity> <!--si può fare anche con texture volendo - TODO trovare soluzione più leggera-->
-    </a-entity>
-    <!--animation="property: rotation; to: 360 360 360; dir: reverse; loop: true; dur: 100000"
+          animation="property: rotation; to: 360 360 360; dir: reverse; loop: true; dur: 100000"
           material="opacity:1; metalness:0.5; color:green; blending:additive"
-          ></a-entity>-->
-
-    <a-entity
-      light="
-        type:ambient;
-        intensity:0.3;
-        "></a-entity>
-      <a-entity
-        light="
-          type:directional;
-          intensity: 0.1;
-          distance:16"
-        position="
-          4 1 -5
-          "
-          rotation="0 0 0">
-      </a-entity>
-        
+          ></a-entity>
+      
     </a-scene>
+
   </body>
 </html>

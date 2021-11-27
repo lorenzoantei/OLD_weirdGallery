@@ -1,10 +1,6 @@
 {
   "dependencies": {
-    "aframe-watcher": "^1.4.0"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.1",
+    "aframe-watcher": "^1.4.0",
     "tailwindcss": "^2.2.19"
   }
 }
