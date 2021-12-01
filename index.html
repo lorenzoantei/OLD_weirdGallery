@@ -59,27 +59,26 @@
         position="0 0 -0.01"
         scale ="0.004 0.004 0.004"
         material="transparent: true"
-      > <!-- non trasparente -->
-        
-        <!--
-        <a-plane 
-          position="0 0 -0.01"
-          material="opacity:0"
-        >  navigate-on-click="url: https://www.youtube.com/watch?v=VNfmnOn5O3A" 
-        -->
+      > <!-- problema trasparenze svg -->
 
         <a-image id="il_progetto_corrente"
           src="/public/bastet.svg"
           position="0 0.5 0"
           ></a-image>
 
-          <a-text 
+          <a-text id="il_link_al_progetto"
             position="0 -0.5 0"
             text="
               value:{{ acquario.org }};
                 color: white; 
                 align: center;
             ">>
+              <a-plane id="il_pulsante_"
+                material="opacity:0"
+                width="1.8"
+                height="0.3"
+                navigate-on-click="url: https://www.reddit.com/" 
+              >
           </a-text>
           
           <a-text id="l_artista"
@@ -89,9 +88,13 @@
                 color: white; 
                 align: center;
           ">
+            <a-plane id="il_pulsante_artista"
+              material="opacity:0;"
+              width="1.2"
+              height="0.3"
+              navigate-on-click="url: https://www.youtube.com/watch?v=VNfmnOn5O3A" 
+             >
           </a-text>
-
-          
 
           </a-entity>
         </a-plane>
