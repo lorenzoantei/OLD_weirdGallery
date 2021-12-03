@@ -52,52 +52,7 @@
     
     -->
 
-    <a-camera
-      cursor="rayOrigin: mouse"
-      position="0 0 0"
-    >
-
-      <a-entity id="la_UI__progetto_corrente"
-        position="0 0 -0.01"
-        scale ="0.004 0.004 0.004"
-        material="transparent: true"
-      > <!-- non trasparente -->
-        
-        <!--
-        <a-plane 
-          position="0 0 -0.01"
-          material="opacity:0"
-        >  navigate-on-click="url: https://www.youtube.com/watch?v=VNfmnOn5O3A" 
-        -->
-
-        <a-image id="il_progetto_corrente"
-          src="/public/bastet.svg"
-          position="0 0.5 0"
-          ></a-image>
-
-          <a-text 
-            position="0 -0.5 0"
-            text="
-              value:{{ acquario.org }};
-                color: white; 
-                align: center;
-            ">>
-          </a-text>
-          
-          <a-text id="l_artista"
-            position="0 -0.2 0"
-            text="
-              value:{{ l'Artista }};
-                color: white; 
-                align: center;
-          ">
-          </a-text>
-
-          
-
-          </a-entity>
-        </a-plane>
-      </a-camera>
+   
 
     <a-assets id="la_texture"> 
       <a-asset-item id="column-obj" src="/public/colonnaobj/Colonna_base.obj"></a-asset-item>
@@ -148,6 +103,53 @@
         ></a-entity> <!--si può fare anche con texture volendo - TODO trovare soluzione più leggera-->
 
     </a-entity>
+
+    <a-camera
+    cursor="rayOrigin: mouse"
+    position="0 0 0"
+  >
+
+    <a-entity id="la_UI__progetto_corrente"
+      position="0 0 -0.01"
+      scale ="0.004 0.004 0.004"
+      material="transparent: true"
+    > <!-- non trasparente -->
+      
+      <!--
+      <a-plane 
+        position="0 0 -0.01"
+        material="opacity:0"
+      >  navigate-on-click="url: https://www.youtube.com/watch?v=VNfmnOn5O3A" 
+      -->
+
+      <a-image id="il_progetto_corrente"
+        src="/public/bastet.svg"
+        position="0 0.5 0"
+        ></a-image>
+
+        <a-text 
+          position="0 -0.5 0"
+          text="
+            value:{{ acquario.org }};
+              color: white; 
+              align: center;
+          ">>
+        </a-text>
+        
+        <a-text id="l_artista"
+          position="0 -0.2 0"
+          text="
+            value:{{ l'Artista }};
+              color: white; 
+              align: center;
+        ">
+        </a-text>
+
+        
+
+        </a-entity>
+      </a-plane>
+    </a-camera>
 
     <a-light id="LUX__ambientale" 
       light="type: ambient" 
