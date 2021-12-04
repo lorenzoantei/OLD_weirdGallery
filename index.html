@@ -52,11 +52,11 @@
     -->
 
    
-    <a-assets>
+    <a-assets id="la_texture_pavimento">
       <img id="nyan" src="/public/grayscale-nyan.png">
     </a-assets>
 
-    <a-assets id="la_texture"> 
+    <a-assets id="la_texture_colonna"> 
       <a-asset-item id="column-obj" src="/public/colonnaobj/Colonna_base.obj"></a-asset-item>
       <!--<a-asset-item id="column-mtl" src="/public/colonnaobj/Colonna_base.mtl"></a-asset-item>-->
     </a-assets>
@@ -84,7 +84,7 @@
           emissive: purple;
           src:#nyan;
           repeat: 10, 1000;"
-          ></a-box> <!-- ora nyan texture -->
+          ></a-box> <!-- ora nyan texture, perchè? -->
 
       <a-entity id="l_elemento_metafisico"
         geometry="primitive:icosahedron; radius:3.8"
@@ -122,23 +122,42 @@
         position="0 0.5 0"
         height="1"
         width="0.6"
-        ></a-image>
+        >
+        <a-plane id="il_pulsante_"
+                material="opacity:0"
+                navigate-on-click="url: https://www.reddit.com/" 
+        ></a-plane>
+      </a-image>
 
-        <a-text 
-          position="0 -0.5 0"
-          text="
-             value:{{ acquario.org }};
-              color: white; 
-              align: center;"
-              ></a-text>
+        <a-text id="il_link_al_progetto"
+            position="0 -0.5 0"
+            text="
+              value:{{ acquario.org }};
+                color: white; 
+                align: center;
+            ">>
+              <a-plane id="il_pulsante_"
+                material="opacity:0"
+                width="1.8"
+                height="0.3"
+                navigate-on-click="url: https://www.reddit.com/" 
+              >
+          </a-text>
         
-        <a-text id="l_artista"
+          <a-text id="l_artista"
           position="0 -0.2 0"
           text="
             value:{{ l'Artista }};
               color: white; 
-              align: center;"
-              ></a-text>
+              align: center;
+        ">
+          <a-plane id="il_pulsante_artista"
+            material="opacity:0;"
+            width="1.2"
+            height="0.3"
+            navigate-on-click="url: https://www.youtube.com/watch?v=VNfmnOn5O3A" 
+           >
+        </a-text>
 
 <!--working on piccolo elemento per attivare e disattivare vista di bastet e testo, a bit confused by js-->        
 
