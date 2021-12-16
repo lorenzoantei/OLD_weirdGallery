@@ -1,0 +1,17 @@
+* {
+    font-family: 'Chilanka', cursive;
+}
+
+.cartellone {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 100;
+  }
+
+  .image-aframe {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    z-index: -100;
+  }
