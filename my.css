@@ -2,16 +2,55 @@
     font-family: 'Chilanka', cursive;
 }
 
-.cartellone {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    z-index: 100;
-  }
 
-  .image-aframe {
-    position: relative;
-    left: 0px;
-    top: 0px;
-    z-index: -100;
+.gradient-text {
+  transition: all 1s ease;
+  color: #FF1361;
+  background-color: #FF1361;
+  background: -o-linear-gradient(left, #FFF800 10% , #FF1361, #44107A, #7794ff);
+  background: -webkit-linear-gradient(left, #FFF800 10% , #FF1361, #44107A, #7794ff);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text.text1 {
+-webkit-animation: dancingColors 2s infinite forwards ease-in-out;
+        animation: dancingColors 2s infinite forwards ease-in-out;
+margin-bottom: 5%;
+}
+
+@media screen and (min-width:0\0) {
+  /* IE9 and IE10 hack */
+  .gradient-text {
+      background: transparent;
   }
+}
+
+@-moz-document url-prefix() {
+/* Firefox hack */
+.gradient-text {
+  background-color: transparent;
+  }
+}
+
+@-webkit-keyframes dancingColors {
+50% {
+ //  background: -webkit-linear-gradient(left, #FF1361, #44107A, #7794ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-position: -860px;
+}
+}
+
+@keyframes dancingColors {
+50% {
+ //  background: -webkit-linear-gradient(left, #FF1361, #44107A, #7794ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-position: -860px;
+}
+}
