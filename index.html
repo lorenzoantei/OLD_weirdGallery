@@ -46,10 +46,9 @@
 
 <body>
 
-  <div style="position:relative;">
+  <div id="aframe_canvas" style="position:relative;">
     <a-scene vr-mode-ui="enabled: false">
       <!--fix FOG
-  
       fog="type: linear; 
         near: 10; 
         far: 100"
@@ -107,65 +106,7 @@
       <a-camera 
         cursor="rayOrigin: mouse" 
         position="0 0 0"
-      >
-
-        <a-entity id="la_UI__progetto_corrente" 
-          position="0 0 -0.01" 
-          scale="0.004 0.004 0.004"
-          material="transparent: true">
-          <!-- ora trasparente -->
-
-          <!--
-    <a-plane 
-      position="0 0 -0.01"
-      material="opacity:0"
-    >  navigate-on-click="url: https://www.youtube.com/watch?v=VNfmnOn5O3A" 
-       </a-plane>-->
-
-          <a-image id="il_progetto_corrente" 
-            src="/public/bastet.svg" 
-            position="0 0.5 0" 
-            height="1" 
-            width="0.6"
-          >
-            <a-plane id="il_pulsante_" 
-              material="opacity:0" 
-              navigate-on-click="url: https://www.reddit.com/"
-            ></a-plane>
-          </a-image>
-
-          <a-text id="il_link_al_progetto" 
-            position="0 -0.5 0" 
-            text="
-              value:{{ acquario.org }};
-                color: white; 
-                align: center;"
-            >
-              <a-plane id="il_pulsante_" 
-                material="opacity:0" 
-                width="1.8" 
-                height="0.3"
-                navigate-on-click="url: https://www.reddit.com/"
-              >
-          </a-text>
-
-          <a-text id="l_artista" 
-            position="0 -0.2 0" 
-            text="
-              value:{{ l'Artista }};
-              color: white; 
-              align: center;
-              ">
-            <a-plane id="il_pulsante_artista" 
-              material="opacity:0;" 
-              width="1.2" 
-              height="0.3"
-              navigate-on-click="url: https://www.youtube.com/watch?v=VNfmnOn5O3A"
-            >
-          </a-text> <!--working on piccolo elemento per attivare e disattivare vista di bastet e testo, a bit confused by js-->
-
-        </a-entity>
-      </a-camera>
+      ></a-camera>
 
       <a-light id="LUX__ambientale" light="type: ambient" position="0 0 0"></a-light>
 
@@ -187,8 +128,17 @@
 
     </a-scene>
 
-    <div style="position:absolute; top:0px; left:0px; z-index:1000;">
-      <p>overlay progetto corrente</p>
+    <div id="UI" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      
+        <div class="flex flex-col space-y-6">
+          <div id="current_project_preview" class="flex justify-center">
+            <img class="w-1/5" src="/public/bastet.svg" alt="preview progetto corrente">
+          </div>
+          <div  class="space-y-6 md:text-6xl text-4xl" id="artista_link">
+            <div class="" id="nome_artista"><a href="#">[nome_artista]</a></div>
+            <div class="" id="link_progetto"><a href="#">[link_progetto]</a></div>
+          </div>
+      </div>
     </div>
   </div>
 </body>
