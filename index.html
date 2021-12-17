@@ -44,10 +44,10 @@
 
 </head>
 
-<body>
+<body class="bg-red-800">
 
   <div id="aframe_canvas" style="position:relative;">
-    <a-scene vr-mode-ui="enabled: false">
+    <a-scene trasparent="true" vr-mode-ui="enabled: false">
       <!--fix FOG
       fog="type: linear; 
         near: 10; 
@@ -64,29 +64,20 @@
         <!--<a-asset-item id="column-mtl" src="/public/colonnaobj/Colonna_base.mtl"></a-asset-item>-->
       </a-assets>
 
-      <a-sky material="
-        color: gray;  
-        side: back;  
-        shader: flat;  
-        npot: true;  
-        offset: [object Object];  
-        repeat: [object Object];  
-        fog: false"
-      ></a-sky>
-      <!--gray sky? nicer to the eyes-->
-
       <a-box id="il_piano" 
-        position="0 -0.8 0" 
+        position="0 -0.8 -50" 
         rotation="-90 0 0" 
-        width="1" 
+        width="2" 
         height="200" 
-        material="opacity: 0.65; 
+        material="
+          src:#nyan;
+          opacity: 0.65; 
           metalness: 0.7; 
           color: purple; 
-          emissive: purple;
-          src:#nyan;
-          repeat: 10, 1000;"
-      ></a-box> <!-- ora nyan texture, perchè? -->
+          emissive: purple; 
+          repeat: 10 1000" 
+        geometry="height: 100">
+      </a-box>
 
       <a-entity id="l_elemento_metafisico" 
         geometry="primitive:icosahedron; radius:3.8" 
@@ -143,6 +134,7 @@
       </div>
     </div>
   </div>
+  
 </body>
 
 </html>
