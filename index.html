@@ -1,140 +1,106 @@
-<html>
-
-<!-- TO-DO
-  * https://docs.google.com/document/d/1cGtF3P_ywNd4_zq2GI5YSzr47-K8BOoaUpjjRP0u1SQ/edit?usp=sharing
--->
-
+<!DOCTYPE html>
+<html lang="it" >
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>weirdGallery</title>
-  <link rel="icon" href="/public/favicon.ico" type="image/x-icon">
-
-  <link href="/dist/output.css" rel="stylesheet"> <!-- tailwind -->
-  <link rel="stylesheet" href="my.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
-
-
-
-  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script> <!-- locale o server?-->
-
-
-  <script> //script anchor link - thx https://stackoverflow.com/questions/49018866/need-help-creating-links-to-other-web-pages-in-aframe
-    AFRAME.registerComponent('navigate-on-click', {
-      schema: {
-        url: { default: '' }
-      },
-
-      init: function () {
-        var data = this.data;
-        var el = this.el;
-
-        el.addEventListener('click', function () {
-          window.open(data.url);
-          //window.location.href = data.url;
-          //così apre una nuova finestra invece di sovrascrivere quella di weirdGallery
-        });
-      }
-    });        
-  </script>
+  <link rel="stylesheet" href="./style.css">
 
 </head>
-
-<body class="bg-red-900">
-
-  <div id="aframe_canvas" style="position:relative;">
-    <a-scene trasparent="true" vr-mode-ui="enabled: false">
-      <!--fix FOG
-      fog="type: linear; 
-        near: 10; 
-        far: 100"
-      -->
-
-
-      <a-assets id="la_texture_pavimento">
-        <img id="nyan" src="/public/grayscale-nyan.png">
-      </a-assets>
-
-      <a-assets id="la_texture_colonna">
-        <a-asset-item id="column-obj" src="/public/colonnaobj/Colonna_base.obj"></a-asset-item>
-        <!--<a-asset-item id="column-mtl" src="/public/colonnaobj/Colonna_base.mtl"></a-asset-item>-->
-      </a-assets>
-
-      <a-box id="il_piano" 
-        position="0 -0.8 -50" 
-        rotation="-90 0 0" 
-        width="2" 
-        height="200" 
-        material="
-          src:#nyan;
-          opacity: 0.65; 
-          metalness: 0.7; 
-          color: purple; 
-          emissive: purple; 
-          repeat: 10 1000" 
-        geometry="height: 100">
-      </a-box>
-
-      <a-entity id="l_elemento_metafisico" 
-        geometry="primitive:icosahedron; radius:3.8" 
-        position="6 2 -10"
-        navigate-on-click="url: ./old.html"
-        animation="property: rotation; to: 360 360 360; dir: reverse; loop: true; dur: 120000"
-        material="opacity:1; metalness:0.8; color:white; blending:additive"
-      > <!--dodecaedro o icosaedro?-->
-        <a-entity 
-          obj-model="obj: #column-obj;" 
-          animation="property: rotation; to: 360 360 360; loop: true; dur: 90000"
-          scale="0.15 0.15 0.15"
-        ></a-entity> <!--si può fare anche con texture volendo - TODO trovare soluzione più leggera-->
-
-      </a-entity>
-
-      <a-camera 
-        cursor="rayOrigin: mouse" 
-        position="0 0 0"
-        wasd-controls-enabled="false"
-        look-controls
-      ></a-camera>
-
-      <a-light id="LUX__ambientale" light="type: ambient" position="0 0 0"></a-light>
-
-      <!-- LUCI
-      <a-entity
-        light="
-          type:ambient;
-          intensity:0.1;
-        "></a-entity>
-      <a-entity
-        light="
-          type:directional;
-          intensity: 0.1;
-          distance:16"
-          position="4 1 -10"
-          rotation="0 0 0"
-      ></a-entity>
-    -->
-
-    </a-scene>
-
-    <div id="UI" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+<body>
+<!-- partial:index.partial.html -->
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <div id="parallax-container">
+  <div class="parallax-wrapper">
+    <div class="parallax-layer figure1" data-depth="0.25">
+        <a-scene trasparent="true" vr-mode-ui="enabled: false">
+            <!--fix FOG
+            fog="type: linear; 
+              near: 10; 
+              far: 100"
+            -->
       
-        <div class="flex flex-col space-y-6">
-          <div id="current_project_preview" class="flex justify-center">
-            <img class="w-1/5" src="/public/bastet.svg" alt="preview progetto corrente">
-          </div>
-          <div  class="space-y-6 md:text-6xl text-4xl" id="artista_link">
-            <div class="gradient-text text1" id="nome_artista"><a href="https://docs.google.com/document/d/1cGtF3P_ywNd4_zq2GI5YSzr47-K8BOoaUpjjRP0u1SQ/edit?usp=sharing">[nome_artista]</a></div>
-            <div class="gradient-text text1" id="link_progetto"><a href="https://codepen.io/aderaaij/pen/XWpMONO">[link_progetto]</a></div>
-          </div>
-      </div>
+      
+            <a-assets id="texture-colonna">
+              <a-asset-item id="column-obj" src="/public/colonnaobj/Colonna_base.obj"></a-asset-item>
+              <!--<a-asset-item id="column-mtl" src="/public/colonnaobj/Colonna_base.mtl"></a-asset-item>-->
+            </a-assets>
+      
+            <a-box id="piano" 
+              position="0 -0.8 -50" 
+              rotation="-90 0 0" 
+              width="2" 
+              height="200" 
+              material="
+                src:#nyan;
+                opacity: 0.65; 
+                metalness: 0.7; 
+                color: purple; 
+                emissive: purple; 
+                repeat: 10 1000" 
+              geometry="height: 100">
+            </a-box>
+      
+            <a-entity id="colonna" 
+              geometry="primitive:icosahedron; radius:3.8" 
+              position="6 2 -10"
+              navigate-on-click="url: ./old.html"
+              animation="property: rotation; to: 360 360 360; dir: reverse; loop: true; dur: 120000"
+              material="opacity:1; metalness:0.8; color:white; blending:additive"
+            > <!--dodecaedro o icosaedro?-->
+              <a-entity 
+                obj-model="obj: #column-obj;" 
+                animation="property: rotation; to: 360 360 360; loop: true; dur: 90000"
+                scale="0.15 0.15 0.15"
+              ></a-entity> <!--si può fare anche con texture volendo - TODO trovare soluzione più leggera-->
+      
+            </a-entity>
+      
+            <a-camera 
+              cursor="rayOrigin: mouse" 
+              position="0 0 0"
+              wasd-controls-enabled="false"
+              look-controls
+            ></a-camera>
+      
+            <a-light id="LUX__ambientale" light="type: ambient" position="0 0 0"></a-light>
+      
+            <!-- LUCI
+            <a-entity
+              light="
+                type:ambient;
+                intensity:0.1;
+              "></a-entity>
+            <a-entity
+              light="
+                type:directional;
+                intensity: 0.1;
+                distance:16"
+                position="4 1 -10"
+                rotation="0 0 0"
+            ></a-entity>
+          -->
+      
+          </a-scene>
     </div>
+    <div class="parallax-layer figure2" data-depth="0.5">
+      figure2
+      <a href="google.com">link</a>
+    </div>
+    <div class="parallax-layer figure3" data-depth="0.8">figure3</div>
+    <div class="parallax-layer picture" data-depth="1.2"></div>
   </div>
-  
-</body>
+</div>
 
+
+    
+  </body>
+</html>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
 </html>
