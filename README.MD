@@ -1,1 +1,1 @@
-Deploy: https://gracious-shirley-f2c104.netlify.app/
+Deploy: https://stoic-lalande-75c540.netlify.app
