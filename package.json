@@ -1,10 +1,12 @@
 {
+  "name": "weirdGallery",
+  "version": "1.0.0",
+  "description": "a gallery",
+  "main": "src/index.html",
+  "repository": "https://github.com/lorenzoantei/weirdGallery.git",
+  "author": "Lorenzo Antei <lorenzoantei@protonmail.com>",
+  "license": "MIT",
   "dependencies": {
-    "aframe-watcher": "^1.4.0"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.2",
-    "postcss": "^8.4.6",
     "tailwindcss": "^3.0.23"
   }
 }
